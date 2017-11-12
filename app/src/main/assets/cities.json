@@ -1,0 +1,34 @@
+{
+  "cities":[
+    {
+      "id": 1,
+      "name": "Minsk",
+      "lat": 0,
+      "lng":0
+    },
+    {
+      "id": 2,
+      "name": "Vilnius",
+      "lat": 0,
+      "lng":0
+    },
+    {
+      "id": 3,
+      "name": "Redwood City",
+      "lat": 0,
+      "lng":0
+    },
+    {
+      "id": 4,
+      "name": "San Francisco",
+      "lat": 0,
+      "lng":0
+    },
+    {
+      "id": 5,
+      "name": "Monterey",
+      "lat": 0,
+      "lng":0
+    }
+  ]
+}
