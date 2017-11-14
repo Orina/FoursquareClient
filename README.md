@@ -18,6 +18,12 @@ Here's a walkthrough of implemented user stories:
 
 <img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+## How to use this app
+
+Add 2 string resource with your Foursquare credentials:
+
+<string name="foursquare_client_id">YOUR_CLIENT_ID</string>
+<string name="foursquare_client_secret">YOUR_CLIENT_SECRET</string>
 
 ## Open-source libraries used
 
