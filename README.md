@@ -22,8 +22,8 @@ Here's a walkthrough of implemented user stories:
 
 Add 2 string resource with your Foursquare credentials:
 
-<string name="foursquare_client_id">YOUR_CLIENT_ID</string>
-<string name="foursquare_client_secret">YOUR_CLIENT_SECRET</string>
+- `<string name="foursquare_client_id">*YOUR_CLIENT_ID*</string>`
+- `<string name="foursquare_client_secret">*YOUR_CLIENT_SECRET*</string>`
 
 ## Open-source libraries used
 
