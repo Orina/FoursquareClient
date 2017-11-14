@@ -1,4 +1,3 @@
-# FoursquareClient
 # Project  - *Foursquare Client*
 
 **Foursquare Client** is an android app that allows a user to search for city venues. The app utilizes [Foursquare web API](https://developer.foursquare.com).
