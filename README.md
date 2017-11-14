@@ -21,10 +21,10 @@ Here's a walkthrough of implemented user stories:
 
 ## How to use this app
 
-Add 2 string resource with your Foursquare credentials:
+Add 2 string resources with your Foursquare credentials:
 
-- `<string name="foursquare_client_id">*YOUR_CLIENT_ID*</string>`
-- `<string name="foursquare_client_secret">*YOUR_CLIENT_SECRET*</string>`
+- `<string name="foursquare_client_id">YOUR_CLIENT_ID</string>`
+- `<string name="foursquare_client_secret">YOUR_CLIENT_SECRET</string>`
 
 ## Open-source libraries used
 
