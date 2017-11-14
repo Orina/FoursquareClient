@@ -2,7 +2,8 @@
 # Project  - *Foursquare Client*
 
 **Foursquare Client** is an android app that allows a user to search for city venues. The app utilizes [Foursquare web API](https://developer.foursquare.com).
-The app implemented Model-View-ViewModel android design pattern in conjunction with Android Data Binding Library.
+
+###The app implemented Model-View-ViewModel android design pattern in conjunction with Android Data Binding Library.
 
 ## User Stories
 
