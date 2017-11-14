@@ -29,7 +29,9 @@ public class FoursquareClientApplication extends Application {
         app = this;
 
         dataComponent = DaggerDataComponent.builder()
-                .remoteNetworkModule(new RemoteNetworkModule(FoursquareService.ENDPOINT))
+                .remoteNetworkModule(new RemoteNetworkModule(FoursquareService.ENDPOINT,
+                        getString(R.string.foursquare_client_id),
+                        getString(R.string.foursquare_client_secret)))
                 .repositoryModule(new RepositoryModule())
                 .appModule(new AppModule(this))
                 .build();

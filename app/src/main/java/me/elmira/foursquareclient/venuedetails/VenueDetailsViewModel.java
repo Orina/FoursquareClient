@@ -1,38 +1,31 @@
-package me.elmira.foursquareclient.cities;
+package me.elmira.foursquareclient.venuedetails;
 
-import android.content.Context;
 import android.databinding.ObservableArrayList;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableList;
 
-import java.lang.ref.WeakReference;
 import java.util.List;
 
 import me.elmira.foursquareclient.BaseViewModel;
-import me.elmira.foursquareclient.data.City;
+import me.elmira.foursquareclient.data.VenuePhoto;
 import me.elmira.foursquareclient.data.source.DataSource;
 
 /**
- * Created by elmira on 11/9/17.
+ * Created by Elmira on 11/13/2017.
  */
 
-public class CitiesViewModel extends BaseViewModel {
+public class VenueDetailsViewModel extends BaseViewModel {
+    private static final int PHOTOS_LIMIT = 50;
 
-    public final ObservableList<City> data = new ObservableArrayList<>();
+    public final ObservableList<VenuePhoto> photos = new ObservableArrayList<>();
 
     public final ObservableBoolean dataLoading = new ObservableBoolean(false);
 
     public final ObservableBoolean emptyData = new ObservableBoolean(false);
 
-    private WeakReference<Context> mContext;
-
-    public CitiesViewModel(WeakReference<Context> mContext) {
-        this.mContext = mContext;
-    }
-
     @Override
     public void onAttach() {
-        loadCities();
+
     }
 
     @Override
@@ -40,18 +33,14 @@ public class CitiesViewModel extends BaseViewModel {
 
     }
 
-    private void loadCities() {
-        Context context = mContext.get();
-        if (context == null) return;
-
+    public void loadVenuePhotos(String venueId) {
         dataLoading.set(true);
-
-        mRepository.loadCities(context, new DataSource.LoadCitiesCallback() {
+        mRepository.loadVenuePhotos(venueId, PHOTOS_LIMIT, new DataSource.LoadVenuePhotosCallback() {
             @Override
-            public void onCitiesLoaded(List<City> cities) {
+            public void onVenuePhotosLoaded(List<VenuePhoto> venuePhotos) {
                 dataLoading.set(false);
-                data.clear();
-                data.addAll(cities);
+                photos.clear();
+                photos.addAll(venuePhotos);
             }
 
             @Override

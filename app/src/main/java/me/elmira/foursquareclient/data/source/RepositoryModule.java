@@ -7,7 +7,6 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import me.elmira.foursquareclient.data.source.local.LocalDataSource;
-import me.elmira.foursquareclient.data.source.remote.FoursquareService;
 import me.elmira.foursquareclient.data.source.remote.RemoteDataSource;
 import me.elmira.foursquareclient.util.AppExecutors;
 
@@ -31,20 +30,14 @@ public class RepositoryModule {
     @Singleton
     @Provides
     @Local
-    LocalDataSource provideLocalDataSource(AppExecutors appExecutors){
+    LocalDataSource provideLocalDataSource(AppExecutors appExecutors) {
         return new LocalDataSource(appExecutors);
     }
 
-    @Singleton
-    @Provides
-    @Remote
-    RemoteDataSource provideRemoteDataSource(FoursquareService foursquareService){
-        return new RemoteDataSource(foursquareService);
-    }
 
     @Singleton
     @Provides
-    Repository provideRepository(@Remote RemoteDataSource remoteDataSource, @Local LocalDataSource localDataSource){
+    Repository provideRepository(@Remote RemoteDataSource remoteDataSource, @Local LocalDataSource localDataSource) {
         return new Repository(remoteDataSource, localDataSource);
     }
 }

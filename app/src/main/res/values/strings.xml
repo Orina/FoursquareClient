@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Foursquare Client</string>
+    <string name="tab_photos">Photos</string>
+    <string name="tab_info">Info</string>
 </resources>

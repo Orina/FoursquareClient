@@ -21,5 +21,6 @@ public abstract class BaseViewModel extends BaseObservable {
     }
 
     public abstract void onAttach();
+
     public abstract void onDetach();
 }

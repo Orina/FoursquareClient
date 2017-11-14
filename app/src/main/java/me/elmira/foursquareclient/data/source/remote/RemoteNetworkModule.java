@@ -8,6 +8,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import me.elmira.foursquareclient.data.source.Remote;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -18,11 +19,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class RemoteNetworkModule {
 
-    String mBaseUrl;
+    private String mBaseUrl;
+    private String mClientId;
+    private String mClientSecret;
 
     // Constructor needs one parameter to instantiate.
-    public RemoteNetworkModule(String baseUrl) {
+    public RemoteNetworkModule(String baseUrl, String clientId, String clientSecret) {
         this.mBaseUrl = baseUrl;
+        this.mClientId = clientId;
+        this.mClientSecret = clientSecret;
     }
 
     @Provides
@@ -45,7 +50,14 @@ public class RemoteNetworkModule {
 
     @Provides
     @Singleton
-    FoursquareService provideFoursquareService(Retrofit retrofit){
+    FoursquareService provideFoursquareService(Retrofit retrofit) {
         return retrofit.create(FoursquareService.class);
+    }
+
+    @Singleton
+    @Provides
+    @Remote
+    RemoteDataSource provideRemoteDataSource(FoursquareService foursquareService) {
+        return new RemoteDataSource(foursquareService, mClientId, mClientSecret);
     }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="photo"
+            type="me.elmira.foursquareclient.data.VenuePhoto" />
+    </data>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:imageUrl="@{photo.imageUrl}"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/ic_image_placeholder"
+        fresco:roundedCornerRadius="1dp"
+        />
+
+</layout>

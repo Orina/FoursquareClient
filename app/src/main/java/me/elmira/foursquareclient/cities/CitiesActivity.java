@@ -49,13 +49,14 @@ public class CitiesActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mViewModel!=null){
+        if (mViewModel != null) {
             mViewModel.onDetach();
         }
     }
 
     private CitiesViewModel findOrCreateViewModel() {
-        ViewModelHolder<CitiesViewModel> vmHolder = (ViewModelHolder<CitiesViewModel>) getSupportFragmentManager().findFragmentByTag(CITIES_VIEW_MODEL_TAG);
+        ViewModelHolder<CitiesViewModel> vmHolder = (ViewModelHolder<CitiesViewModel>)
+                getSupportFragmentManager().findFragmentByTag(CITIES_VIEW_MODEL_TAG);
         if (vmHolder != null && vmHolder.getViewmodel() != null) {
             return vmHolder.getViewmodel();
         }

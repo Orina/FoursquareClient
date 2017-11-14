@@ -26,7 +26,6 @@ import javax.inject.Singleton;
 
 /**
  * Global executor pools for the whole application.
- *
  */
 
 @Singleton
@@ -39,7 +38,7 @@ public class AppExecutors {
     private final Executor mainThread;
 
     public AppExecutors(Executor fileIOThread, Executor networkIO, Executor mainThread) {
-        this.fileIOThread=fileIOThread;
+        this.fileIOThread = fileIOThread;
         this.networkIOThread = networkIO;
         this.mainThread = mainThread;
     }

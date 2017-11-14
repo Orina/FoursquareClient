@@ -17,10 +17,16 @@ import me.elmira.foursquareclient.databinding.ItemCityBinding;
 public class CitiesAdapter extends RecyclerView.Adapter<CityViewHolder> {
 
     private List<City> mCities;
+    private final CityClickCallback mCallback;
+
+    public CitiesAdapter(CityClickCallback mCallback) {
+        this.mCallback = mCallback;
+    }
 
     @Override
     public CityViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ItemCityBinding binding = ItemCityBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        binding.setCallback(mCallback);
         return new CityViewHolder(binding);
     }
 
@@ -31,15 +37,7 @@ public class CitiesAdapter extends RecyclerView.Adapter<CityViewHolder> {
     }
 
     public void swapData(List<City> data) {
-        if (mCities == null) {
-            mCities = new ArrayList<>();
-        }
-        else {
-            mCities.clear();
-        }
-        if (data != null) {
-            mCities.addAll(data);
-        }
+        mCities = new ArrayList<>(data);
         notifyDataSetChanged();
     }
 

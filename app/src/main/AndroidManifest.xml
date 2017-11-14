@@ -19,5 +19,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".venues.SearchVenuesActivity"/>
+
+        <activity android:name=".venuedetails.VenueDetailsActivity"/>
+
     </application>
 </manifest>

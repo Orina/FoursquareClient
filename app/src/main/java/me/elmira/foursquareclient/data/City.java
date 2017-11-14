@@ -42,4 +42,8 @@ public class City {
     public void setLng(double lng) {
         this.lng = lng;
     }
+
+    public String generateLatLng() {
+        return lat + "," + lng;
+    }
 }

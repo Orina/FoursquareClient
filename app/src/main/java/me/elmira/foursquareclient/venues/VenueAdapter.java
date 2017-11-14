@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import me.elmira.foursquareclient.data.Venue;
@@ -39,5 +40,11 @@ public class VenueAdapter extends RecyclerView.Adapter<VenueViewHolder> {
     @Override
     public int getItemCount() {
         return mVenues == null ? 0 : mVenues.size();
+    }
+
+    public void swapData(List<Venue> data) {
+        if (mVenues == null) mVenues = new ArrayList<>();
+        if (data != null && data.size() > 0) mVenues.addAll(data);
+        notifyDataSetChanged();
     }
 }

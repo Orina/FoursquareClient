@@ -5,4 +5,20 @@ package me.elmira.foursquareclient.data;
  */
 
 public class VenuePhoto {
+
+    private String imageUrl;
+    private float aspectRatio;
+
+    public VenuePhoto(String imageUrl, float aspectRatio) {
+        this.imageUrl = imageUrl;
+        this.aspectRatio = aspectRatio;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public float getAspectRatio() {
+        return aspectRatio;
+    }
 }

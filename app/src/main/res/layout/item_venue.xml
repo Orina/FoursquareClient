@@ -1,43 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="venue"
-            type="me.elmira.foursquareclient.data.Venue"/>
+            type="me.elmira.foursquareclient.data.Venue" />
+
         <variable
             name="callback"
-            type="me.elmira.foursquareclient.venues.VenueClickCallback"/>
+            type="me.elmira.foursquareclient.venues.VenueClickCallback" />
     </data>
 
-    <android.support.v7.widget.CardView
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/item_horizontal_margin"
-        android:layout_marginStart="@dimen/item_horizontal_margin"
         android:onClick="@{() -> callback.onClick(venue)}"
-        android:orientation="horizontal"
-        app:cardUseCompatPadding="true">
+        android:columnCount="2"
+        android:layout_marginBottom="@dimen/margin_principal"
+        android:layout_marginTop="@dimen/margin_principal">
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/my_image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_rowSpan="3"
+            app:imageUrl="@{venue.imageUrl}"
+            fresco:placeholderImage="@drawable/ic_image_placeholder"
+            fresco:roundedCornerRadius="6dp"
+            fresco:actualImageScaleType="fitXY"
+            android:layout_marginStart="@dimen/margin_principal"
+            />
 
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:text="@{venue.name}"
+            android:layout_gravity="fill"
+            android:textAppearance="@style/Venue.Name"
+            android:layout_marginStart="@dimen/margin_principal"
+            android:layout_marginEnd="@dimen/margin_principal"/>
 
-            <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/my_image_view"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                app:imageUrl="@{venue.imageUrl}"
-                fresco:placeholderImage="@drawable/ic_image_placeholder"
-                />
+        <TextView
+            android:id="@+id/tvCategories"
+            android:layout_height="wrap_content"
+            android:layout_width="1dp"
+            android:text="@{venue.categories}"
+            android:layout_gravity="fill"
+            android:textAppearance="@style/Venue.Categories"
+            android:layout_marginStart="@dimen/margin_principal"
+            android:layout_marginEnd="@dimen/margin_principal"
+            android:layout_marginBottom="@dimen/margin_normal"/>
 
-        </GridLayout>
-    </android.support.v7.widget.CardView>
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_height="wrap_content"
+            android:layout_width="1dp"
+            android:layout_gravity="fill"
+            android:text="@{venue.address}"
+            android:textAppearance="@style/Venue.Categories"
+            android:layout_marginStart="@dimen/margin_principal"
+            android:layout_marginEnd="@dimen/margin_principal"/>
+
+        <TextView android:id="@+id/tvTips"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:text="@{venue.tips}"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:textAppearance="@style/Venue.Tips"
+            android:layout_marginStart="@dimen/margin_principal"
+            android:layout_marginEnd="@dimen/margin_principal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:visibility="@{venue.tips !=null ? View.VISIBLE : View.GONE}"/>
+
+    </GridLayout>
+
 </layout>

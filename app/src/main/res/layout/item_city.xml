@@ -7,12 +7,17 @@
         <variable
             name="city"
             type="me.elmira.foursquareclient.data.City"/>
+        <variable
+            name="callback"
+            type="me.elmira.foursquareclient.cities.CityClickCallback"/>
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:minHeight="80dp"
+        android:onClick="@{()-> callback.onClick(city)}"
         android:layout_margin="@dimen/margin_small">
 
         <TextView
@@ -21,6 +26,7 @@
             android:text="@{city.name}"
             android:textAppearance="@style/City.Name"
             android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
             tools:text="Minsk"/>
 
     </LinearLayout>

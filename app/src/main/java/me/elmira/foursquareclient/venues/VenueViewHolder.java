@@ -18,7 +18,7 @@ public class VenueViewHolder extends RecyclerView.ViewHolder {
         this.binding = binding;
     }
 
-    public void onBind(Venue venue){
+    public void onBind(Venue venue) {
         binding.setVenue(venue);
         binding.executePendingBindings();
     }

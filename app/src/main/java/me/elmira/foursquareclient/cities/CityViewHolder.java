@@ -9,7 +9,7 @@ import me.elmira.foursquareclient.databinding.ItemCityBinding;
  * Created by elmira on 11/9/17.
  */
 
-public class CityViewHolder extends RecyclerView.ViewHolder{
+public class CityViewHolder extends RecyclerView.ViewHolder {
     private final ItemCityBinding binding;
 
     public CityViewHolder(ItemCityBinding binding) {
@@ -17,7 +17,7 @@ public class CityViewHolder extends RecyclerView.ViewHolder{
         this.binding = binding;
     }
 
-    public void bind(City city){
+    public void bind(City city) {
         binding.setCity(city);
         binding.executePendingBindings();
     }

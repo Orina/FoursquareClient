@@ -2,33 +2,33 @@
   "cities":[
     {
       "id": 1,
-      "name": "Minsk",
-      "lat": 0,
-      "lng":0
+      "name": "Half Moon Bay",
+      "lat": 37.46,
+      "lng": -122.42
     },
     {
       "id": 2,
-      "name": "Vilnius",
-      "lat": 0,
-      "lng":0
+      "name": "Santa Cruz",
+      "lat": 36.97,
+      "lng": -122.03
     },
     {
       "id": 3,
       "name": "Redwood City",
-      "lat": 0,
-      "lng":0
+      "lat": 37.48,
+      "lng": -122.23
     },
     {
       "id": 4,
       "name": "San Francisco",
-      "lat": 0,
-      "lng":0
+      "lat": 37.77,
+      "lng": -122.41
     },
     {
       "id": 5,
       "name": "Monterey",
-      "lat": 0,
-      "lng":0
+      "lat": 36.60,
+      "lng": -121.89
     }
   ]
 }

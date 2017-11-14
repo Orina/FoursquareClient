@@ -40,8 +40,7 @@ public class LocalDataSource implements DataSource {
                     if (cities != null && cities.size() > 0) {
                         Log.d(LOG_TAG, "Cities were loaded, size: " + cities.size());
                         callback.onCitiesLoaded(cities);
-                    }
-                    else {
+                    } else {
                         Log.d(LOG_TAG, "Cities were not found");
                         callback.onDataNotFound();
                     }
@@ -52,5 +51,15 @@ public class LocalDataSource implements DataSource {
             }
         };
         mAppExecutors.fileIOThread().execute(runnable);
+    }
+
+    @Override
+    public void searchVenues(String latLng, int radius, int limit, SearchVenuesCallback callback) {
+        throw new UnsupportedOperationException("Operation is not supported on local data source");
+    }
+
+    @Override
+    public void loadVenuePhotos(String venueId, int limit, LoadVenuePhotosCallback callback) {
+        throw new UnsupportedOperationException("Operation is not supported on local data source");
     }
 }
