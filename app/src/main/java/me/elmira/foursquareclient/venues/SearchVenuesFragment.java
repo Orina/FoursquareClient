@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 
 import me.elmira.foursquareclient.R;
-import me.elmira.foursquareclient.data.Venue;
+import me.elmira.foursquareclient.model.Venue;
 import me.elmira.foursquareclient.databinding.FragmentSearchVenuesBinding;
 import me.elmira.foursquareclient.venuedetails.VenueDetailsActivity;
 

@@ -2,7 +2,7 @@ package me.elmira.foursquareclient.cities;
 
 import android.support.v7.widget.RecyclerView;
 
-import me.elmira.foursquareclient.data.City;
+import me.elmira.foursquareclient.model.City;
 import me.elmira.foursquareclient.databinding.ItemCityBinding;
 
 /**

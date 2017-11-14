@@ -7,8 +7,8 @@ import android.databinding.ObservableList;
 import java.util.List;
 
 import me.elmira.foursquareclient.BaseViewModel;
-import me.elmira.foursquareclient.data.Venue;
-import me.elmira.foursquareclient.data.source.DataSource;
+import me.elmira.foursquareclient.model.Venue;
+import me.elmira.foursquareclient.model.source.DataSource;
 
 /**
  * Created by elmira on 11/8/17.

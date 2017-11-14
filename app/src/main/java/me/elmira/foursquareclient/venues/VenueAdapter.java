@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.elmira.foursquareclient.data.Venue;
+import me.elmira.foursquareclient.model.Venue;
 import me.elmira.foursquareclient.databinding.ItemVenueBinding;
 
 /**

@@ -2,7 +2,7 @@ package me.elmira.foursquareclient.venues;
 
 import android.support.v7.widget.RecyclerView;
 
-import me.elmira.foursquareclient.data.Venue;
+import me.elmira.foursquareclient.model.Venue;
 import me.elmira.foursquareclient.databinding.ItemVenueBinding;
 
 /**

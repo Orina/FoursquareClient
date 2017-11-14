@@ -7,7 +7,7 @@
     <data>
         <variable
             name="photo"
-            type="me.elmira.foursquareclient.data.VenuePhoto" />
+            type="me.elmira.foursquareclient.model.VenuePhoto" />
     </data>
 
     <com.facebook.drawee.view.SimpleDraweeView

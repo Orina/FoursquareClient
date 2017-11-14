@@ -6,7 +6,7 @@
     <data>
         <variable
             name="city"
-            type="me.elmira.foursquareclient.data.City"/>
+            type="me.elmira.foursquareclient.model.City"/>
         <variable
             name="callback"
             type="me.elmira.foursquareclient.cities.CityClickCallback"/>

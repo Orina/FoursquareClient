@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 
 import me.elmira.foursquareclient.R;
-import me.elmira.foursquareclient.data.VenuePhoto;
+import me.elmira.foursquareclient.model.VenuePhoto;
 import me.elmira.foursquareclient.databinding.FragmentVenuePhotosBinding;
 import me.elmira.foursquareclient.util.ItemOffsetDecoration;
 

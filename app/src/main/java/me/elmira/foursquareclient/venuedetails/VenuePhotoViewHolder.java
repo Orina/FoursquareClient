@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.Random;
 
-import me.elmira.foursquareclient.data.VenuePhoto;
+import me.elmira.foursquareclient.model.VenuePhoto;
 import me.elmira.foursquareclient.databinding.ItemVenuePhotoBinding;
 
 /**

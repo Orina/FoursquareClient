@@ -9,8 +9,8 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import me.elmira.foursquareclient.BaseViewModel;
-import me.elmira.foursquareclient.data.City;
-import me.elmira.foursquareclient.data.source.DataSource;
+import me.elmira.foursquareclient.model.City;
+import me.elmira.foursquareclient.model.source.DataSource;
 
 /**
  * Created by elmira on 11/9/17.
