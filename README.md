@@ -10,7 +10,7 @@ The app implemented with Model-View-ViewModel android design pattern in conjunct
 * Model - classes defined in src/main/java/me/elmira/foursquareclient/model/ + Repository. The Repository receives/updates Models via memory cache/local datasource/remote datasource. Access to remote datasource is implemented with Retrofit library. Local datasource accesses only json file with cities list.
 
 - When the app modifies the ViewModel in the MVVM architecture, the View is automatically updated by a library. No need to update the View directly from the ViewModel, as the ViewModel doesn't have access to the necessary reference.
-- The Data Binding Library ensures that the View and ViewModel remain in sync bi-directionally as illustrated by the following diagram.
+- The Data Binding Library ensures that the View and ViewModel remain in sync bi-directionally as illustrated by the following diagram (without SQLite).
 <img src="https://raw.githubusercontent.com/wiki/googlesamples/android-architecture/images/mvvm-databinding.png"/>
           
 ## User Stories
