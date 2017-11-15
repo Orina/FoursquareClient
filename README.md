@@ -7,8 +7,6 @@ The app utilizes [Foursquare web API](https://developer.foursquare.com).
 The app implemented Model-View-ViewModel android design pattern in conjunction with Android Data Binding Library.
 Shortly: MVVM+android data binding+fresco+retrofit+dagger2.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png" />
-
 In this app the 
 * ViewModel - is android.databinding.Observable from android data binding library.
 * View - Fragment/Activities
