@@ -16,7 +16,7 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/Orina/CodePathPrep/blob/master/strings-array-2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## How to use this app
 
