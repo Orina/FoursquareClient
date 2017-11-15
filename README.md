@@ -44,7 +44,7 @@ Add 2 string resources with your Foursquare credentials:
 - [Fresco](http://frescolib.org/) - An image management library 
 - [Retrofit networking library](http://square.github.io/retrofit/) - Http client for Android
 - [GSON library](https://github.com/google/gson)- A Java serialization/deserialization library that can convert Java Objects into JSON and back.
-- [Dagger2](https://github.com/google/dagger) - A fast dependency injector for Android and Java
+- [Dagger2](https://github.com/google/dagger) - A dependency injector for Android and Java
 - [Data Binding Library](https://developer.android.com/topic/libraries/data-binding/index.html) - Android data binding library
 
 ## License
