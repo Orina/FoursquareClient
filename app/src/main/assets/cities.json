@@ -29,6 +29,12 @@
       "name": "Monterey",
       "lat": 36.60,
       "lng": -121.89
+    },
+    {
+      "id": 6,
+      "name": "Test city",
+      "lat": 1000,
+      "lng": 0
     }
   ]
 }

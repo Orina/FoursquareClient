@@ -15,8 +15,8 @@ import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 
 import me.elmira.foursquareclient.R;
-import me.elmira.foursquareclient.model.VenuePhoto;
 import me.elmira.foursquareclient.databinding.FragmentVenuePhotosBinding;
+import me.elmira.foursquareclient.model.VenuePhoto;
 import me.elmira.foursquareclient.util.ItemOffsetDecoration;
 
 import static me.elmira.foursquareclient.venuedetails.VenueDetailsActivity.ARG_VENUE_ID;
@@ -63,18 +63,30 @@ public class VenuePhotosFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        mViewModel = ((VenueDetailsActivity) getActivity()).getViewModel();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         subscribeToModel();
         mViewModel.loadVenuePhotos(mVenueId);
+        mBinding.setLoading(mViewModel.dataLoading);
+        mBinding.setEmptyData(mViewModel.emptyData);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (mBinding != null) {
+            mBinding.unbind();
+        }
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         unsubscribeFromModel();
-    }
-
-    public void setViewModel(VenueDetailsViewModel viewModel) {
-        this.mViewModel = viewModel;
     }
 
     private void setupRecyclerView() {
@@ -88,11 +100,15 @@ public class VenuePhotosFragment extends Fragment {
 
     private void subscribeToModel() {
         mPhotosCallback = new VenuePhotosCallback(this);
-        mViewModel.photos.addOnListChangedCallback(mPhotosCallback);
+        if (mViewModel != null) {
+            mViewModel.photos.addOnListChangedCallback(mPhotosCallback);
+        }
     }
 
     private void unsubscribeFromModel() {
-        mViewModel.photos.removeOnListChangedCallback(mPhotosCallback);
+        if (mViewModel != null) {
+            mViewModel.photos.removeOnListChangedCallback(mPhotosCallback);
+        }
     }
 
     private static class VenuePhotosCallback extends ObservableList.OnListChangedCallback<ObservableList<VenuePhoto>> {
@@ -130,6 +146,4 @@ public class VenuePhotosFragment extends Fragment {
 
         }
     }
-
-
 }

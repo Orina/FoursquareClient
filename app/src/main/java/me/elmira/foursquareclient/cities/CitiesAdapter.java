@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.elmira.foursquareclient.model.City;
 import me.elmira.foursquareclient.databinding.ItemCityBinding;
+import me.elmira.foursquareclient.model.City;
 
 /**
  * Created by elmira on 11/8/17.

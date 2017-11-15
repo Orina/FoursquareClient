@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-</LinearLayout>
+    <data>
+        <import type="me.elmira.foursquareclient.model.Venue"/>
+        <import type="android.graphics.Color" />
+        <import type="android.graphics.drawable.Drawable"/>
+        <variable
+            name="venue"
+            type="android.databinding.ObservableParcelable&lt;Venue&gt;" />
+        <variable
+            name="callback"
+            type="me.elmira.foursquareclient.venuedetails.VenueBookmarkCallback"/>
+    </data>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        >
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_principal"
+            android:layout_marginStart="@dimen/margin_principal"
+            android:layout_marginTop="@dimen/margin_principal"
+            android:text="@{venue.name}"
+            android:textAppearance="@style/Venue.Name" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/margin_principal"
+            android:layout_marginTop="@dimen/margin_principal"
+            android:text="@{venue.rating}"
+            android:textColor="@{Color.parseColor(venue.ratingColor)}"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="start"
+            android:text="@{venue.address}"
+            android:textAppearance="@style/Venue.Categories"
+            android:layout_marginStart="@dimen/margin_principal"
+            android:layout_marginEnd="@dimen/margin_principal"
+            android:layout_marginTop="@dimen/margin_principal"
+            android:layout_columnSpan="2"/>
+
+        <TextView android:id="@+id/btnBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@{venue.bookmarked ? @drawable/ic_favorite_on : @drawable/ic_favorite_off}"
+            android:drawablePadding="@dimen/margin_normal"
+            android:text="@{venue.bookmarked ? @string/unbookmark : @string/bookmark}"
+            android:layout_marginStart="@dimen/margin_principal"
+            android:layout_marginTop="@dimen/margin_principal"
+            android:onClick="@{()-> callback.onVenueBookmark()}"
+            android:textAppearance="@style/Venue.Name"/>
+
+    </GridLayout>
+</layout>

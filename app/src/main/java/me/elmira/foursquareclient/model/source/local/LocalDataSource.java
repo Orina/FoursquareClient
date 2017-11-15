@@ -62,4 +62,14 @@ public class LocalDataSource implements DataSource {
     public void loadVenuePhotos(String venueId, int limit, LoadVenuePhotosCallback callback) {
         throw new UnsupportedOperationException("Operation is not supported on local data source");
     }
+
+    @Override
+    public void bookmarkVenue(String venueId, OnVenueBookmarkCallback callback) {
+        throw new UnsupportedOperationException("Operation is not supported on local data source");
+    }
+
+    @Override
+    public void loadVenueDetails(String venueId, LoadVenueDetailsCallback callback) {
+        throw new UnsupportedOperationException("Operation is not supported on local data source");
+    }
 }

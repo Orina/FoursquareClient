@@ -4,7 +4,7 @@ import android.databinding.BaseObservable;
 
 import javax.inject.Inject;
 
-import me.elmira.foursquareclient.data.source.Repository;
+import me.elmira.foursquareclient.model.source.Repository;
 
 /**
  * Created by elmira on 11/9/17.

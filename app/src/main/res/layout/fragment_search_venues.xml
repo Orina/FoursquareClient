@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="loading"
+            type="android.databinding.ObservableBoolean"/>
+        <variable
+            name="emptyData"
+            type="android.databinding.ObservableBoolean"/>
+    </data>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvVenues"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvVenues"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/loadingLayout"
+            layout="@layout/content_loading"
+            android:visibility="@{loading ? View.VISIBLE : View.GONE}"/>
+
+        <include
+            android:id="@+id/emptyDataLayout"
+            layout="@layout/content_empty_data"
+            android:visibility="@{emptyData ? View.VISIBLE : View.GONE}"/>
+
+    </FrameLayout>
 
 </layout>

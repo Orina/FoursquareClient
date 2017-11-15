@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.elmira.foursquareclient.model.VenuePhoto;
 import me.elmira.foursquareclient.databinding.ItemVenuePhotoBinding;
+import me.elmira.foursquareclient.model.VenuePhoto;
 
 /**
  * Created by Elmira on 11/13/2017.

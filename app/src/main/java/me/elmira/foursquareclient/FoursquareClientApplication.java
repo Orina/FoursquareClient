@@ -4,12 +4,12 @@ import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
-import me.elmira.foursquareclient.data.source.RepositoryModule;
-import me.elmira.foursquareclient.data.source.remote.FoursquareService;
-import me.elmira.foursquareclient.data.source.remote.RemoteNetworkModule;
 import me.elmira.foursquareclient.di.AppModule;
 import me.elmira.foursquareclient.di.DaggerDataComponent;
 import me.elmira.foursquareclient.di.DataComponent;
+import me.elmira.foursquareclient.model.source.RepositoryModule;
+import me.elmira.foursquareclient.model.source.remote.FoursquareService;
+import me.elmira.foursquareclient.model.source.remote.RemoteNetworkModule;
 
 /**
  * Created by elmira on 11/9/17.

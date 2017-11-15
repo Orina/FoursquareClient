@@ -16,8 +16,8 @@ import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 
 import me.elmira.foursquareclient.R;
-import me.elmira.foursquareclient.model.Venue;
 import me.elmira.foursquareclient.databinding.FragmentSearchVenuesBinding;
+import me.elmira.foursquareclient.model.Venue;
 import me.elmira.foursquareclient.venuedetails.VenueDetailsActivity;
 
 /**
@@ -66,7 +66,22 @@ public class SearchVenuesFragment extends Fragment implements VenueClickCallback
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         subscribeToModel();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         mViewModel.searchVenues(mLatLng);
+        mBinding.setLoading(mViewModel.dataLoading);
+        mBinding.setEmptyData(mViewModel.emptyData);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (mBinding != null) {
+            mBinding.unbind();
+        }
     }
 
     @Override

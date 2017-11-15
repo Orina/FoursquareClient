@@ -140,4 +140,29 @@ public class Repository implements DataSource {
             }
         });
     }
+
+    @Override
+    public void bookmarkVenue(String venueId, OnVenueBookmarkCallback callback) {
+        Log.d(LOG_TAG, "bookmarkVenue() venueId: "+venueId);
+        if (!mCachedVenues.containsKey(venueId)) {
+            Log.d(LOG_TAG, "Venue is not found");
+            callback.onFailed();
+            return;
+        }
+
+        Venue venue = mCachedVenues.get(venueId);
+        venue.setBookmarked(!venue.isBookmarked());
+        mCachedVenues.put(venueId, venue);
+        callback.onSuccess(venue);
+    }
+
+    @Override
+    public void loadVenueDetails(String venueId, LoadVenueDetailsCallback callback) {
+        Log.d(LOG_TAG, "Load venue from memory cache.");
+        if (!mCachedVenues.containsKey(venueId)) {
+            callback.onDataNotFound();
+            return;
+        }
+        callback.onVenueLoaded(mCachedVenues.get(venueId));
+    }
 }

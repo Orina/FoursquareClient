@@ -2,10 +2,36 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvPhotos"
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="loading"
+            type="android.databinding.ObservableBoolean" />
+        <variable
+            name="emptyData"
+            type="android.databinding.ObservableBoolean" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/loadingLayout"
+            layout="@layout/content_loading"
+            android:visibility="@{loading ? View.VISIBLE : View.GONE}"/>
+
+        <include
+            android:id="@+id/emptyDataLayout"
+            layout="@layout/content_empty_data"
+            android:visibility="@{emptyData ? View.VISIBLE : View.GONE}"/>
+
+    </FrameLayout>
 
 </layout>
 

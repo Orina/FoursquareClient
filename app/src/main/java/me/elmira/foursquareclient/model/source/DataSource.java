@@ -9,11 +9,21 @@ import me.elmira.foursquareclient.model.Venue;
 import me.elmira.foursquareclient.model.VenuePhoto;
 
 /**
- * Created by elmira on 11/8/17.
+ * Created by Elmira Andreeva on 11/8/17.
  */
 
 
 public interface DataSource {
+
+    void loadCities(Context context, LoadCitiesCallback callback);
+
+    void searchVenues(String latLng, int radius, int limit, SearchVenuesCallback callback);
+
+    void loadVenuePhotos(String venueId, int limit, LoadVenuePhotosCallback callback);
+
+    void bookmarkVenue(String venueId, OnVenueBookmarkCallback callback);
+
+    void loadVenueDetails(String venueId, LoadVenueDetailsCallback callback);
 
     interface LoadCitiesCallback {
 
@@ -42,9 +52,9 @@ public interface DataSource {
         void onDataNotFound();
     }
 
-    void loadCities(Context context, LoadCitiesCallback callback);
+    interface OnVenueBookmarkCallback {
+        void onSuccess(Venue newVenue);
 
-    void searchVenues(String latLng, int radius, int limit, SearchVenuesCallback callback);
-
-    void loadVenuePhotos(String venueId, int limit, LoadVenuePhotosCallback callback);
+        void onFailed();
+    }
 }

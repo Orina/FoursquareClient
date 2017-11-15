@@ -51,4 +51,12 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="textAllCaps">true</item>
     </style>
+
+    <style name="TextTitle.Light" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
 </resources>

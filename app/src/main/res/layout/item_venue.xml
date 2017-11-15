@@ -5,6 +5,8 @@
 
     <data>
         <import type="android.view.View"/>
+        <import type="me.elmira.foursquareclient.R"/>
+        <import type="android.graphics.drawable.Drawable"/>
         <variable
             name="venue"
             type="me.elmira.foursquareclient.model.Venue" />
@@ -24,8 +26,8 @@
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/my_image_view"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/thumbnail_venue"
+            android:layout_height="@dimen/thumbnail_venue"
             android:layout_rowSpan="3"
             app:imageUrl="@{venue.imageUrl}"
             fresco:placeholderImage="@drawable/ic_image_placeholder"
@@ -42,7 +44,9 @@
             android:layout_gravity="fill"
             android:textAppearance="@style/Venue.Name"
             android:layout_marginStart="@dimen/margin_principal"
-            android:layout_marginEnd="@dimen/margin_principal"/>
+            android:layout_marginEnd="@dimen/margin_principal"
+            android:gravity="top"
+            android:drawableEnd="@{venue.bookmarked ? @drawable/ic_favorite_on : @drawable/ic_favorite_off}"/>
 
         <TextView
             android:id="@+id/tvCategories"

@@ -2,4 +2,8 @@
     <string name="app_name">Foursquare Client</string>
     <string name="tab_photos">Photos</string>
     <string name="tab_info">Info</string>
+    <string name="empty_data">No loaded data</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="unbookmark">Unbookmark</string>
 </resources>

@@ -119,4 +119,14 @@ public class RemoteDataSource implements DataSource {
             }
         });
     }
+
+    @Override
+    public void bookmarkVenue(String venueId, OnVenueBookmarkCallback callback) {
+        throw new UnsupportedOperationException("Operation is not supported on remote data source");
+    }
+
+    @Override
+    public void loadVenueDetails(String venueId, LoadVenueDetailsCallback callback) {
+        throw new UnsupportedOperationException("Operation is not supported on remote data source");
+    }
 }

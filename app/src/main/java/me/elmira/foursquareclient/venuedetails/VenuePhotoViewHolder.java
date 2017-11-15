@@ -4,8 +4,8 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.Random;
 
-import me.elmira.foursquareclient.model.VenuePhoto;
 import me.elmira.foursquareclient.databinding.ItemVenuePhotoBinding;
+import me.elmira.foursquareclient.model.VenuePhoto;
 
 /**
  * Created by Elmira on 11/13/2017.
