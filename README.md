@@ -1,9 +1,24 @@
 # Project  - *Foursquare Client*
 
-**Foursquare Client** is an android app that allows a user to search for city venues. The app utilizes [Foursquare web API](https://developer.foursquare.com).
+**Foursquare Client** is an android app that allows a user to search for city venues. 
+The app utilizes [Foursquare web API](https://developer.foursquare.com).
 
+## Designing the app
 The app implemented Model-View-ViewModel android design pattern in conjunction with Android Data Binding Library.
 
+MVVM+android data binding+fresco+retrofit+dagger2.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png />
+
+In this app the 
+* ViewModel - is android.databinding.Observable from android data binding library.
+* View - Fragment/Activities
+* Model - classes defined in + Repository. Repositore receives/updates Models via memory cache/local datasource/remote datasource. Access to remote datasource is implemented with Retrofit library. Local datasource only access json file with cities list.
+
+- When the app modifies the ViewModel in the MVVM architecture, the View is automatically updated by a library or framework. You can’t update the View directly from the ViewModel, as the ViewModel doesn't have access to the necessary reference.
+- The Data Binding Library ensures that the View and ViewModel remain in sync bi-directionally as illustrated by the following diagram.
+<img src="https://raw.githubusercontent.com/wiki/googlesamples/android-architecture/images/mvvm-databinding.png/>
+          
 ## User Stories
 
 The following **required** functionality is completed:
