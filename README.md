@@ -8,7 +8,7 @@ The app implemented Model-View-ViewModel android design pattern in conjunction w
 
 MVVM+android data binding+fresco+retrofit+dagger2.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png />
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png" />
 
 In this app the 
 * ViewModel - is android.databinding.Observable from android data binding library.
@@ -17,7 +17,7 @@ In this app the
 
 - When the app modifies the ViewModel in the MVVM architecture, the View is automatically updated by a library or framework. You can’t update the View directly from the ViewModel, as the ViewModel doesn't have access to the necessary reference.
 - The Data Binding Library ensures that the View and ViewModel remain in sync bi-directionally as illustrated by the following diagram.
-<img src="https://raw.githubusercontent.com/wiki/googlesamples/android-architecture/images/mvvm-databinding.png/>
+<img src="https://raw.githubusercontent.com/wiki/googlesamples/android-architecture/images/mvvm-databinding.png"/>
           
 ## User Stories
 
