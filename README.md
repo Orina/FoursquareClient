@@ -4,10 +4,7 @@
 The app utilizes [Foursquare web API](https://developer.foursquare.com).
 
 ## Designing the app
-The app implemented Model-View-ViewModel android design pattern in conjunction with Android Data Binding Library.
-Shortly: MVVM+android data binding+fresco+retrofit+dagger2.
-
-In this app the 
+The app implemented Model-View-ViewModel android design pattern in conjunction with Android data binding library.
 * ViewModel - is android.databinding.Observable from android data binding library.
 * View - Fragment/Activities
 * Model - classes defined in src/main/java/me/elmira/foursquareclient/model/ + Repository. The Repository receives/updates Models via memory cache/local datasource/remote datasource. Access to remote datasource is implemented with Retrofit library. Local datasource accesses only json file with cities list.
