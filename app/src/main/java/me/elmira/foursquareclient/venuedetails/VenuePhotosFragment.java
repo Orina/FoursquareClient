@@ -63,7 +63,7 @@ public class VenuePhotosFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ((VenueDetailsActivity) getActivity()).getViewModel();
+        mViewModel = ((GetVenueVMCallback) getActivity()).getViewModel();
     }
 
     @Override

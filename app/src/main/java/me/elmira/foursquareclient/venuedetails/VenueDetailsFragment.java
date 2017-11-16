@@ -59,7 +59,7 @@ public class VenueDetailsFragment extends Fragment implements VenueBookmarkCallb
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         Log.d(LOG_TAG, "onActivityCreated()");
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ((VenueDetailsActivity)getActivity()).getViewModel();
+        mViewModel = ((GetVenueVMCallback)getActivity()).getViewModel();
         mBinding.setVenue(mViewModel.venue);
         mViewModel.loadVenue(mVenueId);
     }

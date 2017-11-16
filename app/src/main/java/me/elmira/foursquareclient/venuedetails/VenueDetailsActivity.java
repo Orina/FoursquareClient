@@ -16,7 +16,7 @@ import me.elmira.foursquareclient.cities.CitiesFragment;
  * Created by Elmira on 11/13/2017.
  */
 
-public class VenueDetailsActivity extends AppCompatActivity {
+public class VenueDetailsActivity extends AppCompatActivity implements GetVenueVMCallback{
 
     private static final String LOG_TAG = "VenueDetailsAct";
     public static final String ARG_VENUE_ID = "venueId";
@@ -56,6 +56,7 @@ public class VenueDetailsActivity extends AppCompatActivity {
         return viewModel;
     }
 
+    @Override
     public VenueDetailsViewModel getViewModel() {
         return mViewModel;
     }
